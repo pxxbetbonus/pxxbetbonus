@@ -1,0 +1,24 @@
+<?php
+require 'db/connect.php';
+if (isset($_POST['btn-reg'])) {
+    echo"đã submit";
+    echo"<pre>";
+    print_r($_POST);
+    $phone=$_post['phone'];
+    if(!empty($phone)){
+      //insert dữ liệu
+      echo"đã submit";
+      echo"<pre>";
+
+      $sql = "INSERT INTO`tbl_uesrs`(`phone`)VALUES('$phone')";
+
+      if($conn->query($sql)===TRUE){
+        echo "thêm dữ liệu thành công ";
+      }else{
+        echo "lỗi{$sql}".$conn->error;
+      }
+    }else{
+        echo" bạn cần nhập sữ liệu trước khi gưởi ";
+    }
+}
+?>
